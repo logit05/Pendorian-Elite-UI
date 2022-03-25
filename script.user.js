@@ -892,6 +892,14 @@ function define () {
 
     modules.removeBattleStats.code = function (resolve) {
         const t = `
+            #header-stats > div.header-stats-user > * {
+                display: none;
+            }`;
+        resolve(t);
+    };
+
+    modules.removeGoldStat.code = function (resolve) {
+        const t = `
             #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(3),
             #rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(2),
     		#rhodium-boosts-actions + div + div > table > tbody > tr:nth-of-type(1),
@@ -900,14 +908,6 @@ function define () {
     		#rhodium-boosts-actions + div + div + div > table > tbody > tr:nth-of-type(1) {
     			display: none;
     		}`;
-        resolve(t);
-    };
-
-    modules.removeGoldStat.code = function (resolve) {
-        let t = `
-            #header-content {
-                width: calc(100% - 260px) !important
-            }`;
         resolve(t);
     };
 
